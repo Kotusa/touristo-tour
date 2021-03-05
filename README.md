@@ -48,7 +48,7 @@ root
 ```
 
 #### How to check it
-1. You can visit GitHub Pages by following this [link](https://kotusa.github.io/touristo-tour/);
+1. You can visit GitHub Pages by following this [link](https://kotusa.github.io/touristo-tour/index.html);
 2. You can clone or download this repo and simply install all dependencies and open this project locally;
 2.1. Use this command in opened root folder:
 ```
