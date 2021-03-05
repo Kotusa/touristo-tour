@@ -1,0 +1,306 @@
+.b-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    &__inner {
+        display: flex;
+        overflow: hidden;
+        background-color: #fff;
+        border-radius: 0 0 8px 8px;
+        position: relative;
+        z-index: 6;
+        box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        &.active {
+            box-shadow: none;
+        }
+    }
+    &__row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 16px 23px 10px;
+        @include breakpoint(md) {
+            padding: 25px 25px 20px 15px;
+        }
+        @include breakpoint(sm) {
+            justify-content: flex-end;
+        }
+    }
+    &__interactive {
+        display: flex;
+    }
+    &__item {
+        @include center;
+        position: relative;
+        height: 100%;
+        padding-left: 15px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: .5px;
+            height: 100%;
+            width: 1px;
+            background-color: #f7f5f5;
+        }
+        @include breakpoint(md) {
+            padding: 0px 0px 0px 0px;
+            &::before {
+                content: none;
+            }
+        }
+    }
+    &__contact {
+        margin-right: 25px;
+        @include breakpoint(lg) {
+            margin-right: 15px;
+        }
+        @include breakpoint(md) {
+            margin-right: 35px;
+        }
+        @include breakpoint(sm) {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+    &__button {
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+    &__icon {
+        width: 25px;
+        height: 25px;
+        fill: $main-color;
+        &-wrap {
+            display: none;
+            @include breakpoint(md) {
+                display: block;
+            }
+        }
+    }
+    &__mobile-toggle {
+        margin-left: 25px;
+    }
+    &__menu {
+        @include breakpoint(sm) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 90px;
+            padding-bottom: 40px;
+            overflow: auto;
+            z-index: 21;
+            transform: translateY(-200%);
+            opacity: 0;
+            visibility: hidden;
+            transition: .6s;
+            .b-header {
+                &__navigation {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+                &__contact {
+                    margin-top: 35px;
+                }
+                &__nav {
+                    .b-nav {
+                        &__list {
+                            flex-direction: column;
+                        }
+                        &__link {
+                            font-size: 14px;
+                            padding: 10px 0;
+                            &::after {
+                                content: none;
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                transform: translate(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    &__call {
+        margin-right: 10px;
+        @include breakpoint(sm) {
+            margin: 10px 0px 0px 0px;
+        }
+    }
+}
+
+.b-logo {
+    @include center;
+    padding: 0 27px;
+    background-color: $main-color;
+    &__title {
+        padding: 15px 0;
+        color: #ffffff;
+        font-size: 20px;
+        span {
+            font-weight: 700;
+        }
+    }
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin: 0px 15px 0px 0px;
+    }
+    @include breakpoint(lg) {
+        padding: 0 15px;
+        &__title {
+            font-size: 15px;
+        }
+    }
+    @include breakpoint(sm) {
+        background-color: #fff;
+        &__title {
+            color: $main-color;
+            font-size: 18px;
+        }
+    }
+}
+
+.b-nav {
+    &__list {
+        display: flex;
+    }
+    &__link {
+        position: relative;
+        display: block;
+        padding: 6px 18px;
+        color: #cccccc;
+        font-size: 12px;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: calc(100% - 36px);
+            height: 1px;
+            background-color: currentColor;
+            transition: .3s;
+        }
+        &:hover {
+            &::after {
+                transform: translateX(-50%) scaleX(1);
+            }
+        }
+        @include breakpoint(lg) {
+            padding: 6px 8px;
+        }
+    }
+    &--secondary {
+        .b-nav {
+            &__link {
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                color: $main-color;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.b-call {
+    display: flex;
+    align-items: center;
+    &__icon {
+        width: 32px;
+        height: 32px;
+        fill: $main-color;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8px;
+        @include breakpoint(md) {
+            display: none;
+        }
+        @include breakpoint(sm) {
+            display: flex;
+        }
+    }
+    &__phone {
+        font-weight: 700;
+        font-size: 15px;
+        color: #000;
+        &:hover {
+            text-decoration: underline;
+        }
+        @include breakpoint(lg) {
+            font-size: 12px;
+        }
+    }
+    &__text {
+        color: $main-color;
+        font-size: 12px;
+    }
+}
+
+.b-mobile-toggle {
+    $par: &;
+    display: none;
+    width: 28px;
+    height: 28px;
+    padding-top: 3.5px;
+    &__item {
+        span {
+            $width: 2px;
+            position: relative;
+            display: block;
+            width: 100%;
+            height: $width;
+            background-color: $main-color;
+            transition: all 0.3s;
+            backface-visibility: hidden;
+            border-radius: 2px;
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 9px;
+                width: 100%;
+                height: $width;
+                background-color: $main-color;
+                transition: all 0.3s;
+                backface-visibility: hidden;
+                border-radius: 2px;
+            }
+            &::after {
+                top: 18.5px;
+            }
+        }
+    }
+    &.active {
+        #{$par}__item {
+            span {
+                background-color: transparent;
+                &::before {
+                    transform: rotate(45deg) translate(-1px, 0px);
+                }
+                &::after {
+                    transform: rotate(-45deg) translate(6px,-7.5px);
+                }
+            }
+        }
+    }
+    @include breakpoint(sm) {
+        display: block;
+    }
+}

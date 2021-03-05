@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="ru-RU">
+
+<head>
+  <meta charset="utf-8" />
+  <title>TouristoTour</title>
+  <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+  <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"/><![endif]-->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Tourist agency website" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="libs/normalize.min.css">
+  <link rel="stylesheet" href="libs/nouislider.min.css">
+  <link rel="stylesheet" href="libs/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <main class="b-wrapper">
+    <header class="b-header">
+      <div class="b-header__container b-container b-container--padding">
+        <div class="b-header__inner" rel="js-mobile-menu"><a class="b-header__logo b-logo" href="index.html">
+            <svg class="b-logo__icon">
+              <use xlink:href="img/sprite/sprite.svg#travel"></use>
+            </svg><span class="b-logo__title">Touristo<span>Tour</span></span></a>
+          <div class="b-header__row">
+            <div class="b-header__navigation" data-da=".b-header__menu,767,0">
+              <nav class="b-header__nav b-nav">
+                <ul class="b-nav__list">
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Про компанию</a></li>
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Услуги</a></li>
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Частые вопросы</a></li>
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Оплата и доставка</a></li>
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Контакты</a></li>
+                </ul>
+              </nav>
+              <nav class="b-header__nav b-nav b-nav--secondary">
+                <ul class="b-nav__list">
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Путешествия</a></li>
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Распродажа</a></li>
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Страны</a></li>
+                  <li class="b-nav__item"><a class="b-nav__link" href="#">Мои путешествия</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="b-header__interactive">
+              <div class="b-header__item">
+                <div class="b-header__call b-call" data-da=".b-header__menu,767,1"><a class="b-call__icon-wrap" href="tel:+78107187391" title="Звонок">
+                    <svg class="b-call__icon">
+                      <use xlink:href="img/sprite/sprite.svg#phone"></use>
+                    </svg></a>
+                  <div class="b-call__content"><a class="b-call__phone" href="tel:+78107187391">+7 810 718 73 91</a><a class="b-call__text" href="#">Заказать звонок</a></div>
+                </div>
+              </div>
+              <div class="b-header__item"><a class="b-header__button b-button" href="#">Найти путешествия</a><a class="b-header__icon-wrap" href="#">
+                  <svg class="b-header__icon">
+                    <use xlink:href="img/sprite/sprite.svg#globe"></use>
+                  </svg></a>
+                <div class="b-header__mobile-toggle b-mobile-toggle" rel="js-mobile-toggle">
+                  <div class="b-mobile-toggle__item"><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-header__menu" rel="js-mobile-menu"></div>
+    </header>
+    <section class="b-hero">
+      <div class="b-hero__container b-container b-container--width">
+        <div class="b-hero__inner">
+          <h1 class="b-hero__title b-title b-title--secondary">Куда отправимся?</h1>
+          <p class="b-hero__subtitle">Вы можете осуществить поиск по нескольким направлениям одновременно (не больше 5)</p>
+          <form class="b-hero__search b-search" rel="js-search">
+            <div class="b-search__line">
+              <ul class="b-search__tags b-tags" rel="js-search-tags"></ul>
+              <label class="b-search__label" for="search">Поиск</label>
+              <input class="b-search__input" id="search" type="search" placeholder="Страна, город, регион, отель" rel="js-search-input" autocomplete="off" />
+              <svg class="b-search__icon">
+                <use xlink:href="img/sprite/sprite.svg#search"></use>
+              </svg>
+              <div class="b-search__result b-result" rel="js-search-result">
+                <div class="b-result__wrap">
+                  <div class="b-result__caption">Город</div>
+                  <ul class="b-result__list" rel="js-result-list">
+                    <li class="b-result__item" rel="js-result-item" data-name="Москва">Москва, Россия</li>
+                    <li class="b-result__item" rel="js-result-item" data-name="Санкт-Петербург">Санкт-Петербург, Россия</li>
+                  </ul>
+                </div>
+                <div class="b-result__wrap">
+                  <div class="b-result__caption">Курорт</div>
+                  <ul class="b-result__list" rel="js-result-list">
+                    <li class="b-result__item" rel="js-result-item" data-name="Бали">Бали</li>
+                    <li class="b-result__item" rel="js-result-item" data-name="Мальдивы">Мальдивы</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="b-search__row">
+              <div class="b-search__extended b-extended">
+                <div class="b-extended__container hidden" rel="js-extended">
+                  <div class="b-extended__inner">
+                    <div class="b-extended__item">
+                      <div class="b-extended__date b-date">
+                        <div class="b-date__calendar b-calendar" rel="js-calendar">
+                          <svg class="b-calendar__icon b-calendar__icon--calendar">
+                            <use xlink:href="img/sprite/sprite.svg#calendar"></use>
+                          </svg>
+                          <div class="b-calendar__content" rel="js-calendar-content"></div>
+                          <svg class="b-calendar__icon b-calendar__icon--arrow">
+                            <use xlink:href="img/sprite/sprite.svg#arrow"></use>
+                          </svg>
+                        </div>
+                        <div class="b-date__checkbox b-checkbox">
+                          <input class="b-checkbox__input" id="date-1" type="checkbox" />
+                          <label class="b-checkbox__value" for="date-1">гибкие даты</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="b-extended__item">
+                      <div class="b-extended__range b-range">
+                        <div class="b-range__inner"><span class="b-range__title">Продолжительность</span>
+                          <div class="b-range__slider" rel="js-range-slider"></div>
+                          <div class="b-range__content"><span class="b-range__info">от 2 дней</span><span class="b-range__info">до 120 дней</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="b-extended__item">
+                      <div class="b-extended__dropdown b-dropdown" rel="js-dropdown">
+                        <div class="b-dropdown__caption" rel="js-dropdown-caption">
+                          <svg class="b-dropdown__icon b-dropdown__icon--human">
+                            <use xlink:href="img/sprite/sprite.svg#human"></use>
+                          </svg><span class="b-dropdown__title">Количество пассажиров</span>
+                          <svg class="b-dropdown__icon b-dropdown__icon--arrow">
+                            <use xlink:href="img/sprite/sprite.svg#arrow"></use>
+                          </svg>
+                        </div>
+                        <div class="b-dropdown__content" rel="js-dropdown-content">
+                          <div class="b-dropdown__counter b-counter"><span class="b-counter__title">Взрослых</span>
+                            <div class="b-counter__params">
+                              <input class="b-counter__input" type="number" min="0" value="1" />
+                              <div class="b-counter__buttons"><span class="b-counter__button b-counter__button--minus" rel="js-minus-button">-</span><span class="b-counter__button b-counter__button--plus" rel="js-plus-button">+</span></div>
+                            </div>
+                          </div>
+                          <div class="b-dropdown__counter b-counter"><span class="b-counter__title">Детей</span>
+                            <div class="b-counter__params">
+                              <input class="b-counter__input" type="number" min="0" value="0" />
+                              <div class="b-counter__buttons"><span class="b-counter__button b-counter__button--minus" rel="js-minus-button">-</span><span class="b-counter__button b-counter__button--plus" rel="js-plus-button">+</span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><span class="b-extended__dashed b-dashed hidden" rel="js-extended-title" data-hidden="Расширенный поиск" data-shown="Скрыть">Расширенный поиск</span>
+              </div>
+              <button class="b-search__button b-button b-button--inverted" type="submit">Найти путешествия</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="b-catalog">
+      <div class="b-catalog__container b-container">
+        <div class="b-catalog__inner">
+          <h2 class="b-catalog__title b-title">Распродажа путешествий</h2>
+          <ul class="b-catalog__filter b-filter">
+            <li class="b-filter__tag b-tag b-tag--action active" rel="js-filter-tag" data-category-target="all">Все страны</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="tours">Экскурсионные туры</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="hotel">Отель 5*</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="vip">VIP туры</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="egypt">Египет</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="uae">ОАЭ</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="srilanka">Шри-Ланка</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="thailand">Тайланд</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="grece">Греция</li>
+            <li class="b-filter__tag b-tag b-tag--action" rel="js-filter-tag" data-category-target="maldives">Мальдивы</li>
+          </ul>
+          <div class="b-catalog__swiper-container swiper-container" rel="js-catalog-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="egypt,tours,hotel">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/egypt_1.png" alt="Egypt" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/egypt_2.jpg" alt="Egypt" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/egypt_3.jpg" alt="Egypt" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>103980</span></p><a class="b-card__name" href="#">Sunrise Marina Port Ghalib 5*</a><a class="b-card__address" href="#">Египет, Шарм Эль Шейх</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">16-26 ноября (20 ночей)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Санкт-Петербурга</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="5">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Все включено</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">8120</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">89</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="tours,srilanka">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/srilanka_1.jpg" alt="srilanka" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/srilanka_2.jpg" alt="srilanka" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/srilanka_3.jpg" alt="srilanka" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>104580</span></p><a class="b-card__name" href="#">Выходные на Шри-Ланке</a><a class="b-card__address" href="#">Шри-Ланка, Коломбо / Chapelton House 3*</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">09-12 февраля (3 ночи)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Москвы</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="3">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Завтрак</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">4554</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">50</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="uae,vip">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/uae_1.jpg" alt="uae" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/uae_2.jpg" alt="uae" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/uae_3.jpg" alt="uae" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/uae_4.jpg" alt="uae" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>104587</span></p><a class="b-card__name" href="#">Al Khaleej Palace 4*</a><a class="b-card__address" href="#">ОАЭ, Дубай</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">12-22 августа (10 ночей)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Москвы</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="4">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Все включено</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">140000</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">1 540</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="thailand,hotel,tours">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/thai_1.jpg" alt="thai" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/thai_2.jpg" alt="thai" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/thai_3.jpg" alt="thai" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>103670</span></p><a class="b-card__name" href="#">Dusit Laguna (Phuket) 5*</a><a class="b-card__address" href="#">Тайланд, Пхукет</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">3-8 декабря (5 ночей)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Москвы</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="5">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Завтрак + обед</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">18200</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">200</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="grece,hotel">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/grece_1.jpg" alt="grece" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/grece_2.jpg" alt="grece" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/grece_3.jpg" alt="grece" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/grece_4.jpg" alt="grece" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>103280</span></p><a class="b-card__name" href="#">Выходные в Греции</a><a class="b-card__address" href="#">Греция, Корфу</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">25-27 июля (2 ночи)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Москвы</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="5">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Завтрак</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">22700</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">250</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="maldives,vip,tours,hotel">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/mal_1.jpg" alt="maldives" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/mal_2.jpg" alt="maldives" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/mal_3.jpg" alt="maldives" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/mal_4.jpg" alt="maldives" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>103670</span></p><a class="b-card__name" href="#">Gili Lankanfushi Maldives 5*</a><a class="b-card__address" href="#">Мальдивы, Атолл Северный Мале</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">2-13 июля (11 ночей)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Москвы</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="5">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Все включено</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">110000</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">1200</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="egypt,tours">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/luxor_1.jpg" alt="luxor" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/luxor_2.jpg" alt="luxor" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/luxor_3.jpg" alt="luxor" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>102530</span></p><a class="b-card__name" href="#">Sunflower West Bank 3*</a><a class="b-card__address" href="#">Египет, Луксор</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">3-10 августа (7 ночей)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Санкт-Петербурга</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="3">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Завтрак + обед</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">10100</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">110</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-cards__card b-card" rel="js-card" data-category="thailand,vip">
+                  <div class="b-card__inner">
+                    <div class="b-card__preview b-preview"><span class="b-preview__tag">Распродажа</span>
+                      <div class="b-preview__switch b-preview-switch" rel="js-switch-preview">
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/thailand_1.jpg" alt="thailand" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/thailand_2.jpg" alt="thailand" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/thailand_3.jpg" alt="thailand" /></div>
+                        </div>
+                        <div class="b-preview-switch__item">
+                          <div class="b-preview-switch__img"><img src="img/thailand_4.jpg" alt="thailand" /></div>
+                        </div>
+                      </div>
+                      <ul class="b-preview__pagination b-pagination" aria-hidden="true" rel="js-switch-pagination"></ul>
+                    </div>
+                    <div class="b-card__content">
+                      <div class="b-card__main">
+                        <div class="b-card__header">
+                          <p class="b-card__id">id: <span>105680</span></p><a class="b-card__name" href="#">Siam Bayview 4*</a><a class="b-card__address" href="#">Тайланд, Паттайя</a>
+                        </div>
+                        <div class="b-card__common">
+                          <div class="b-card__item">
+                            <svg class="b-card__icon">
+                              <use xlink:href="img/sprite/sprite.svg#calendar2"></use>
+                            </svg><span class="b-card__info">12-22 июня (10 ночей)</span>
+                          </div>
+                          <div class="b-card__row">
+                            <div class="b-card__item">
+                              <svg class="b-card__icon">
+                                <use xlink:href="img/sprite/sprite.svg#visa"></use>
+                              </svg><span class="b-card__info">Без визы</span>
+                            </div>
+                            <div class="b-card__item">
+                              <svg class="b-card__icon b-card__icon--plane">
+                                <use xlink:href="img/sprite/sprite.svg#plane"></use>
+                              </svg><span class="b-card__info">Вылет из Москвы</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-card__row">
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Отель</div>
+                            <div class="b-card__rating b-rating" data-rating="4">
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                              <div class="b-rating__item">
+                                <svg class="b-rating__icon">
+                                  <use xlink:href="img/sprite/sprite.svg#star"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="b-card__wrap">
+                            <div class="b-card__subtitle">Питание</div>
+                            <div class="b-card__info">Все включено</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="b-card__footer">
+                        <div class="b-card__price b-price"><span class="b-price__price" data-currency="₽" rel="js-price">95600</span><span class="b-price__per"> / чел.</span><span class="b-price__eq" data-currency="€" rel="js-price-eq">1050</span></div>
+                        <button class="b-card__dashed b-dashed b-dashed--colored">Сравнить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div><a class="b-catalog__button b-button" href="#">Все путешествия по акции</a>
+        </div>
+      </div>
+    </section>
+    <section class="b-contact">
+      <div class="b-contact__container b-container">
+        <div class="b-contact__inner">
+          <h2 class="b-contact__title b-title b-title--secondary">Получайте выгодные предложения первыми - подпишитесь на рассылку</h2>
+          <div class="b-contact__caption"></div>
+          <form class="b-contact__form b-form" action="#">
+            <div class="b-form__wrapper">
+              <div class="b-form__column active" rel="js-tabs" data-name="email">
+                <h3 class="b-form__title active" data-da=".b-contact__caption,767.9,first" rel="js-tabs-title" data-name="email">По email:</h3>
+                <div class="b-form__form">
+                  <svg class="b-form__icon">
+                    <use xlink:href="img/sprite/sprite.svg#email"></use>
+                  </svg>
+                  <label class="b-form__label" for="email">email</label>
+                  <input class="b-form__input" id="email" type="text" placeholder="Ваш email адрес" />
+                  <button class="b-form__sign b-sign">Подписаться</button>
+                </div>
+              </div>
+              <div class="b-form__column b-form__column--width" rel="js-tabs" data-name="phone">
+                <h3 class="b-form__title" data-da=".b-contact__caption,767.9,last" rel="js-tabs-title" data-name="phone">По СМС:</h3>
+                <div class="b-form__form">
+                  <svg class="b-form__icon b-form__icon--phone">
+                    <use xlink:href="img/sprite/sprite.svg#phone2"></use>
+                  </svg>
+                  <label class="b-form__label" for="sms">смс</label>
+                  <input class="b-form__input" id="sms" type="text" placeholder="Ваш номер телефона" />
+                  <button class="b-form__sign b-sign">Подписаться</button>
+                </div>
+              </div>
+            </div>
+            <p class="b-form__info">Не более 1 сообщения в неделю. Никакого спама. Вы сможете отписаться в любое время, когда пожелаете.</p>
+            <button class="b-form__button">Подписаться</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="b-special">
+      <div class="b-special__container b-container">
+        <div class="b-special__inner">
+          <h2 class="b-special__title b-title">Специальные предложения</h2>
+          <div class="b-special__swiper-container swiper-container" rel="js-special-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="b-special__offer b-offer" style="background-image:url('img/special_1.jpg');">
+                  <div class="b-offer__content"><a class="b-offer__title" href="#">Свадьба за границей</a>
+                    <p class="b-offer__info">Превратите свою свадьбу в незабываемое сказку, неповторимое действо в одном из красивейших уголков мира.</p><a class="b-offer__sign b-sign" href="#">узнать больше</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-special__offer b-offer" style="background-image:url('img/special_2.jpg');">
+                  <div class="b-offer__content"><a class="b-offer__title" href="#">Шоппинг в Венеции</a>
+                    <p class="b-offer__info">Окунитесь в сказочное приключение в одном из прекраснейших мест планеты. Вас ждут море позитивных эмоций и событий.</p><a class="b-offer__sign b-sign" href="#">узнать больше</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="b-testimonials">
+      <div class="b-testimonials__container b-container">
+        <div class="b-testimonials__inner">
+          <h2 class="b-testimonials__title b-title">Отзывы туристов</h2>
+          <div class="b-testimonials__swiper-container swiper-container" rel="js-testimonials-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="b-testimonials__review b-review">
+                  <div class="b-review__content">
+                    <h3 class="b-review__title">Наталья (25)</h3>
+                    <p class="b-review__text">Хороший отдых начинается с планирования. А планирование требует времени, знаний и опыта. Мы гарантируем вам удовольствие не только от отдыха, но еще до того, от процесса его планирования.</p>
+                  </div><a class="b-review__content-toggle" data-src="#review-popup" href="javascript:;" aria-label="review-button">
+                    <svg class="b-review__icon">
+                      <use xlink:href="img/sprite/sprite.svg#full-screen"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-testimonials__review b-review">
+                  <div class="b-review__content">
+                    <h3 class="b-review__title">Александр (43)</h3>
+                    <p class="b-review__text">Консультация с широким активом играет важную роль в формировании форм развития. Не следует, однако забывать, что новая модель организационной деятельности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание дальнейших направлений развития.</p>
+                  </div><a class="b-review__content-toggle" data-src="#review-popup" href="javascript:;" aria-label="review-button">
+                    <svg class="b-review__icon">
+                      <use xlink:href="img/sprite/sprite.svg#full-screen"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-testimonials__review b-review">
+                  <div class="b-review__content">
+                    <h3 class="b-review__title">Антонина (34)</h3>
+                    <p class="b-review__text">Задача организации, в особенности же начало повседневной работы по формированию позиции требуют от нас анализа системы обучения кадров, соответствует насущным потребностям.</p>
+                  </div><a class="b-review__content-toggle" data-src="#review-popup" href="javascript:;" aria-label="review-button">
+                    <svg class="b-review__icon">
+                      <use xlink:href="img/sprite/sprite.svg#full-screen"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="b-testimonials__review b-review">
+                  <div class="b-review__content">
+                    <h3 class="b-review__title">Алексей (26)</h3>
+                    <p class="b-review__text">Разнообразный и богатый опыт новая модель организационной деятельности требуют от нас анализа дальнейших направлений развития. Равным образом дальнейшее развитие различных форм деятельности способствует подготовки и реализации существенных финансовых и административных условий. Повседневная практика показывает, что консультация с широким активом требуют определения и уточнения систем массового участия.Не следует, однако забывать, что сложившаяся структура организации играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.</p>
+                  </div><a class="b-review__content-toggle" data-src="#review-popup" href="javascript:;" aria-label="review-button">
+                    <svg class="b-review__icon">
+                      <use xlink:href="img/sprite/sprite.svg#full-screen"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="b-review__popup" id="review-popup">
+                <h3 class="b-review__title"></h3>
+                <p class="b-review__text"></p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="b-testimonials__swiper-navigation">
+            <div class="swiper-button swiper-button-next">
+              <svg class="swiper-button-icon swiper-button-icon-reverse">
+                <use xlink:href="img/sprite/sprite.svg#nav_arrow"></use>
+              </svg>
+            </div>
+            <div class="swiper-button swiper-button-prev">
+              <svg class="swiper-button-icon">
+                <use xlink:href="img/sprite/sprite.svg#nav_arrow"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="b-footer">
+      <div class="b-footer__container b-container">
+        <div class="b-footer__inner">
+          <div class="b-footer__contacts b-contacts">
+            <div class="b-contacts__row">
+              <svg class="b-contacts__icon">
+                <use xlink:href="img/sprite/sprite.svg#email2"></use>
+              </svg><a class="b-contacts__link" href="#">touristo@gmail.com</a>
+            </div>
+            <div class="b-contacts__row">
+              <svg class="b-contacts__icon b-contacts__icon--phone">
+                <use xlink:href="img/sprite/sprite.svg#phone3"></use>
+              </svg>
+              <div class="b-contacts__phone"><a class="b-contacts__link b-contacts__link--secondary" href="tel:+78107187391">+7 810 718 73 91</a><a class="b-contacts__link b-contacts__link--secondary" href="tel:+78107187391">+7 810 718 73 91</a></div>
+            </div>
+            <div class="b-contacts__row">
+              <svg class="b-contacts__icon b-contacts__icon--location">
+                <use xlink:href="img/sprite/sprite.svg#location"></use>
+              </svg><span class="b-contacts__location">м. Ужгород, ул. Ивана Франко 1в, оф. 1</span>
+            </div>
+            <div class="b-contacts__media b-media"><a class="b-media__item" href="#" rel="noopener noreferrer" title="facebook">
+                <svg class="b-media__icon">
+                  <use xlink:href="img/sprite/sprite.svg#facebook"></use>
+                </svg></a><a class="b-media__item" href="#" rel="noopener noreferrer" title="vk">
+                <svg class="b-media__icon">
+                  <use xlink:href="img/sprite/sprite.svg#vk"></use>
+                </svg></a><a class="b-media__item" href="#" rel="noopener noreferrer" title="instagram">
+                <svg class="b-media__icon">
+                  <use xlink:href="img/sprite/sprite.svg#instagram"></use>
+                </svg></a></div>
+          </div>
+          <div class="b-footer__menu b-menu">
+            <nav class="b-menu__nav">
+              <h4 class="b-menu__sign b-sign" rel="js-accordion-toggle">Путешествия</h4>
+              <ul class="b-menu__list">
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Поиск туров</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Каталог туров</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Свадьба за границей</a></li>
+              </ul>
+            </nav>
+            <nav class="b-menu__nav">
+              <h4 class="b-menu__sign b-sign" rel="js-accordion-toggle">Распродажа</h4>
+              <ul class="b-menu__list">
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Акционные путевки</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Что такое Бамбарбия</a></li>
+              </ul>
+            </nav>
+            <nav class="b-menu__nav">
+              <h4 class="b-menu__sign b-sign" rel="js-accordion-toggle">Страны</h4>
+              <ul class="b-menu__list">
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Египет</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">ОАЭ</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Турция</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Доминикана</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Шри Ланка</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Тайланд</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Чехия</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Греция</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Мальдивы</a></li>
+              </ul>
+            </nav>
+            <nav class="b-menu__nav">
+              <h4 class="b-menu__sign b-sign" rel="js-accordion-toggle">Про нас</h4>
+              <ul class="b-menu__list">
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Про компанию</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Услуги</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Часто задаваемые вопросы</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Доставка и оплата</a></li>
+                <li class="b-menu__item"><a class="b-menu__link" href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--vendor scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="libs/svgxuse.min.js"></script>
+    <script src="libs/nouislider.min.js"></script>
+    <script src="libs/wNumb.min.js"></script>
+    <script src="libs/dynamicAdapt.js"></script>
+    <script src="libs/highlight.js"></script>
+    <script src="libs/daterangepicker.js"></script>
+    <script src="js/scripts.js"></script>
+    <!--user scripts-->
+  </main>
+</body>
+
+</html>

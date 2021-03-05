@@ -1,0 +1,646 @@
+
+extends layout/base
+block variables
+    -var currentPage = 'index'
+    -var title = 'TouristoTour'
+
+block page-content
+    section.b-hero
+        .b-hero__container.b-container.b-container--width
+            .b-hero__inner
+                h1.b-hero__title.b-title.b-title--secondary Куда отправимся?
+                p.b-hero__subtitle Вы можете осуществить поиск по нескольким направлениям одновременно (не больше 5)
+                form.b-hero__search.b-search(rel="js-search")
+                    .b-search__line
+                        ul.b-search__tags(rel="js-search-tags").b-tags
+                        label(for="search").b-search__label Поиск
+                        input#search(type="search" placeholder="Страна, город, регион, отель" rel="js-search-input" autocomplete="off").b-search__input
+                        +svg('b-search__icon', 'search')
+                        .b-search__result(rel="js-search-result").b-result
+                            .b-result__wrap
+                                .b-result__caption Город
+                                ul.b-result__list(rel="js-result-list")
+                                    li.b-result__item(rel="js-result-item" data-name="Москва") Москва, Россия
+                                    li.b-result__item(rel="js-result-item" data-name="Санкт-Петербург") Санкт-Петербург, Россия
+                            .b-result__wrap
+                                .b-result__caption Курорт
+                                ul.b-result__list(rel="js-result-list")
+                                    li.b-result__item(rel="js-result-item" data-name="Бали") Бали
+                                    li.b-result__item(rel="js-result-item" data-name="Мальдивы") Мальдивы
+
+                    .b-search__row
+                        .b-search__extended.b-extended
+                            .b-extended__container.hidden(rel="js-extended")
+                                .b-extended__inner
+                                    .b-extended__item
+                                        .b-extended__date.b-date
+                                            .b-date__calendar.b-calendar(rel="js-calendar")
+                                                +svg('b-calendar__icon b-calendar__icon--calendar', 'calendar')
+                                                .b-calendar__content(rel="js-calendar-content")
+                                                +svg('b-calendar__icon b-calendar__icon--arrow', 'arrow')
+                                            .b-date__checkbox.b-checkbox
+                                                input#date-1.b-checkbox__input(type="checkbox")
+                                                label(for="date-1").b-checkbox__value гибкие даты
+                                    .b-extended__item
+                                        .b-extended__range.b-range
+                                            .b-range__inner
+                                                span.b-range__title Продолжительность
+                                                .b-range__slider(rel="js-range-slider")
+                                                .b-range__content
+                                                    span.b-range__info от 2 дней
+                                                    span.b-range__info до 120 дней
+                                    .b-extended__item
+                                        .b-extended__dropdown.b-dropdown(rel="js-dropdown")
+                                            .b-dropdown__caption(rel="js-dropdown-caption")
+                                                +svg('b-dropdown__icon b-dropdown__icon--human', 'human')
+                                                span.b-dropdown__title Количество пассажиров
+                                                +svg('b-dropdown__icon b-dropdown__icon--arrow', 'arrow')
+                                            .b-dropdown__content(rel="js-dropdown-content")
+                                                .b-dropdown__counter.b-counter
+                                                    span.b-counter__title Взрослых
+                                                    .b-counter__params
+                                                        input.b-counter__input(type="number" min="0" value="1")
+                                                        .b-counter__buttons
+                                                            span.b-counter__button.b-counter__button--minus(rel="js-minus-button") -
+                                                            span.b-counter__button.b-counter__button--plus(rel="js-plus-button") +
+                                                .b-dropdown__counter.b-counter
+                                                    span.b-counter__title Детей
+                                                    .b-counter__params
+                                                        input.b-counter__input(type="number" min="0" value="0")
+                                                        .b-counter__buttons
+                                                            span.b-counter__button.b-counter__button--minus(rel="js-minus-button") -
+                                                            span.b-counter__button.b-counter__button--plus(rel="js-plus-button") +
+                            span.b-extended__dashed.b-dashed.hidden(rel="js-extended-title" data-hidden="Расширенный поиск" data-shown="Скрыть") Расширенный поиск
+                        button(type="submit").b-search__button.b-button.b-button--inverted Найти путешествия
+
+    section.b-catalog
+        .b-catalog__container.b-container
+            .b-catalog__inner
+                h2.b-catalog__title.b-title Распродажа путешествий
+
+                ul.b-catalog__filter.b-filter
+                    li.b-filter__tag.b-tag.b-tag--action.active(rel="js-filter-tag" data-category-target="all") Все страны
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="tours") Экскурсионные туры
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="hotel") Отель 5*
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="vip") VIP туры
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="egypt") Египет
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="uae") ОАЭ
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="srilanka") Шри-Ланка
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="thailand") Тайланд
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="grece") Греция
+                    li.b-filter__tag.b-tag.b-tag--action(rel="js-filter-tag" data-category-target="maldives") Мальдивы
+
+                .b-catalog__swiper-container(rel="js-catalog-slider").swiper-container
+                    .swiper-wrapper
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="egypt,tours,hotel")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/egypt_1.png", alt="Egypt")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/egypt_2.jpg", alt="Egypt")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/egypt_3.jpg", alt="Egypt")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>103980</span>
+                                                a(href="#").b-card__name Sunrise Marina Port Ghalib 5*
+                                                a(href="#").b-card__address Египет, Шарм Эль Шейх
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 16-26 ноября (20 ночей)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Санкт-Петербурга
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="5")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Все включено
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 8120
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 89
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="tours,srilanka")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/srilanka_1.jpg", alt="srilanka")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/srilanka_2.jpg", alt="srilanka")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/srilanka_3.jpg", alt="srilanka")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>104580</span>
+                                                a(href="#").b-card__name Выходные на Шри-Ланке
+                                                a(href="#").b-card__address Шри-Ланка, Коломбо / Chapelton House 3*
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 09-12 февраля (3 ночи)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Москвы
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="3")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Завтрак
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 4554
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 50
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="uae,vip")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/uae_1.jpg", alt="uae")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/uae_2.jpg", alt="uae")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/uae_3.jpg", alt="uae")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/uae_4.jpg", alt="uae")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>104587</span>
+                                                a(href="#").b-card__name Al Khaleej Palace 4*
+                                                a(href="#").b-card__address ОАЭ, Дубай
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 12-22 августа (10 ночей)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Москвы
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="4")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Все включено
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 140000
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 1 540
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="thailand,hotel,tours")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/thai_1.jpg", alt="thai")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/thai_2.jpg", alt="thai")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/thai_3.jpg", alt="thai")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>103670</span>
+                                                a(href="#").b-card__name Dusit Laguna (Phuket) 5*
+                                                a(href="#").b-card__address Тайланд, Пхукет
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 3-8 декабря (5 ночей)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Москвы
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="5")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Завтрак + обед
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 18200
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 200
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="grece,hotel")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/grece_1.jpg", alt="grece")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/grece_2.jpg", alt="grece")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/grece_3.jpg", alt="grece")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/grece_4.jpg", alt="grece")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>103280</span>
+                                                a(href="#").b-card__name Выходные в Греции
+                                                a(href="#").b-card__address Греция, Корфу
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 25-27 июля (2 ночи)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Москвы
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="5")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Завтрак
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 22700
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 250
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="maldives,vip,tours,hotel")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/mal_1.jpg", alt="maldives")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/mal_2.jpg", alt="maldives")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/mal_3.jpg", alt="maldives")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/mal_4.jpg", alt="maldives")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>103670</span>
+                                                a(href="#").b-card__name Gili Lankanfushi Maldives 5*
+                                                a(href="#").b-card__address Мальдивы, Атолл Северный Мале
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 2-13 июля (11 ночей)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Москвы
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="5")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Все включено
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 110000
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 1200
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="egypt,tours")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/luxor_1.jpg", alt="luxor")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/luxor_2.jpg", alt="luxor")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/luxor_3.jpg", alt="luxor")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>102530</span>
+                                                a(href="#").b-card__name Sunflower West Bank 3*
+                                                a(href="#").b-card__address Египет, Луксор
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 3-10 августа (7 ночей)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Санкт-Петербурга
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="3")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Завтрак + обед
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 10100
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 110
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                        .swiper-slide
+                            .b-cards__card.b-card(rel="js-card" data-category="thailand,vip")
+                                .b-card__inner
+                                    .b-card__preview.b-preview
+                                        span.b-preview__tag Распродажа
+                                        .b-preview__switch.b-preview-switch(rel="js-switch-preview")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/thailand_1.jpg", alt="thailand")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/thailand_2.jpg", alt="thailand")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/thailand_3.jpg", alt="thailand")
+                                            .b-preview-switch__item
+                                                .b-preview-switch__img
+                                                    img(src="img/thailand_4.jpg", alt="thailand")
+                                        ul(aria-hidden="true" rel="js-switch-pagination").b-preview__pagination.b-pagination
+                                    .b-card__content
+                                        .b-card__main
+                                            .b-card__header
+                                                p.b-card__id id: <span>105680</span>
+                                                a(href="#").b-card__name Siam Bayview 4*
+                                                a(href="#").b-card__address Тайланд, Паттайя
+                                            .b-card__common
+                                                .b-card__item
+                                                    +svg('b-card__icon', 'calendar2')
+                                                    span.b-card__info 12-22 июня (10 ночей)
+                                                .b-card__row
+                                                    .b-card__item
+                                                        +svg('b-card__icon', 'visa')
+                                                        span.b-card__info Без визы
+                                                    .b-card__item
+                                                        +svg('b-card__icon b-card__icon--plane', 'plane')
+                                                        span.b-card__info Вылет из Москвы
+                                            .b-card__row
+                                                .b-card__wrap
+                                                    .b-card__subtitle Отель
+                                                    .b-card__rating.b-rating(data-rating="4")
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                        .b-rating__item
+                                                            +svg('b-rating__icon', 'star')
+                                                .b-card__wrap
+                                                    .b-card__subtitle Питание
+                                                    .b-card__info Все включено
+                                        .b-card__footer
+                                            .b-card__price.b-price
+                                                span.b-price__price(data-currency="₽" rel="js-price") 95600
+                                                span.b-price__per  / чел.
+                                                span.b-price__eq(data-currency="€" rel="js-price-eq") 1050
+                                            button.b-card__dashed.b-dashed.b-dashed--colored Сравнить
+                    .swiper-pagination
+
+                a(href="#").b-catalog__button.b-button Все путешествия по акции
+
+    section.b-contact
+        .b-contact__container.b-container
+            .b-contact__inner
+                h2.b-contact__title.b-title.b-title--secondary Получайте выгодные предложения первыми - подпишитесь на рассылку
+                .b-contact__caption
+                form(action="#").b-contact__form.b-form
+                    .b-form__wrapper
+                        .b-form__column.active(rel="js-tabs" data-name="email")
+                            h3.b-form__title.active(data-da=".b-contact__caption,767.9,first" rel="js-tabs-title" data-name="email") По email:
+                            .b-form__form
+                                +svg('b-form__icon', 'email')
+                                label(for="email").b-form__label email
+                                input#email(type="text" placeholder="Ваш email адрес").b-form__input
+                                button.b-form__sign.b-sign Подписаться
+                        .b-form__column.b-form__column--width(rel="js-tabs" data-name="phone")
+                            h3.b-form__title(data-da=".b-contact__caption,767.9,last" rel="js-tabs-title" data-name="phone") По СМС:
+                            .b-form__form
+                                +svg('b-form__icon b-form__icon--phone', 'phone2')
+                                label(for="sms").b-form__label смс
+                                input#sms(type="text" placeholder="Ваш номер телефона").b-form__input
+                                button.b-form__sign.b-sign Подписаться
+                    p.b-form__info Не более 1 сообщения в неделю. Никакого спама. Вы сможете отписаться в любое время, когда пожелаете.
+                    button.b-form__button Подписаться
+
+    section.b-special
+        .b-special__container.b-container
+            .b-special__inner
+                h2.b-special__title.b-title Специальные предложения
+                .b-special__swiper-container(rel="js-special-slider").swiper-container
+                    .swiper-wrapper
+                        .swiper-slide
+                            .b-special__offer.b-offer(style={"background-image":"url('img/special_1.jpg')"})
+                                .b-offer__content
+                                    a(href="#").b-offer__title Свадьба за границей
+                                    p.b-offer__info Превратите свою свадьбу в незабываемое сказку, неповторимое действо в одном из красивейших уголков мира.
+                                    a(href="#").b-offer__sign.b-sign узнать больше
+                        .swiper-slide
+                            .b-special__offer.b-offer(style={"background-image":"url('img/special_2.jpg')"})
+                                .b-offer__content
+                                    a(href="#").b-offer__title Шоппинг в Венеции
+                                    p.b-offer__info Окунитесь в сказочное приключение в одном из прекраснейших мест планеты. Вас ждут море позитивных эмоций и событий.
+                                    a(href="#").b-offer__sign.b-sign узнать больше
+                    .swiper-pagination
+
+    section.b-testimonials
+        .b-testimonials__container.b-container
+            .b-testimonials__inner
+                h2.b-testimonials__title.b-title Отзывы туристов
+                .b-testimonials__swiper-container(rel="js-testimonials-slider").swiper-container
+                    .swiper-wrapper
+                        .swiper-slide
+                            .b-testimonials__review.b-review
+                                .b-review__content
+                                    h3.b-review__title Наталья (25)
+                                    p.b-review__text Хороший отдых начинается с планирования. А планирование требует времени, знаний и опыта. Мы гарантируем вам удовольствие не только от отдыха, но еще до того, от процесса его планирования.
+                                a(data-src="#review-popup" href="javascript:;" aria-label="review-button").b-review__content-toggle
+                                    +svg('b-review__icon', 'full-screen')
+                        .swiper-slide
+                            .b-testimonials__review.b-review
+                                .b-review__content
+                                    h3.b-review__title Александр (43)
+                                    p.b-review__text Консультация с широким активом играет важную роль в формировании форм развития. Не следует, однако забывать, что новая модель организационной деятельности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание дальнейших направлений развития.
+                                a(data-src="#review-popup" href="javascript:;" aria-label="review-button").b-review__content-toggle
+                                    +svg('b-review__icon', 'full-screen')
+                        .swiper-slide
+                            .b-testimonials__review.b-review
+                                .b-review__content
+                                    h3.b-review__title Антонина (34)
+                                    p.b-review__text Задача организации, в особенности же начало повседневной работы по формированию позиции требуют от нас анализа системы обучения кадров, соответствует насущным потребностям.
+                                a(data-src="#review-popup" href="javascript:;" aria-label="review-button").b-review__content-toggle
+                                    +svg('b-review__icon', 'full-screen')
+                        .swiper-slide
+                            .b-testimonials__review.b-review
+                                .b-review__content
+                                    h3.b-review__title Алексей (26)
+                                    p.b-review__text Разнообразный и богатый опыт новая модель организационной деятельности требуют от нас анализа дальнейших направлений развития. Равным образом дальнейшее развитие различных форм деятельности способствует подготовки и реализации существенных финансовых и административных условий. Повседневная практика показывает, что консультация с широким активом требуют определения и уточнения систем массового участия.Не следует, однако забывать, что сложившаяся структура организации играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.
+                                a(data-src="#review-popup" href="javascript:;" aria-label="review-button").b-review__content-toggle
+                                    +svg('b-review__icon', 'full-screen')
+                        .b-review__popup(id="review-popup")
+                            h3.b-review__title
+                            p.b-review__text
+                    .swiper-pagination
+                .b-testimonials__swiper-navigation
+                    .swiper-button.swiper-button-next
+                        +svg('swiper-button-icon swiper-button-icon-reverse', 'nav_arrow')
+                    .swiper-button.swiper-button-prev
+                        +svg('swiper-button-icon', 'nav_arrow')
+

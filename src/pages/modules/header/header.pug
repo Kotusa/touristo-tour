@@ -1,0 +1,36 @@
+header.b-header
+    .b-header__container.b-container.b-container--padding
+        .b-header__inner(rel="js-mobile-menu")
+            a(href="index.html").b-header__logo.b-logo
+                +svg('b-logo__icon', 'travel')
+                span.b-logo__title Touristo<span>Tour</span>
+            .b-header__row
+                .b-header__navigation(data-da=".b-header__menu,767,0")
+                    nav.b-header__nav.b-nav
+                        ul.b-nav__list
+                            li.b-nav__item: a(href="#").b-nav__link Про компанию
+                            li.b-nav__item: a(href="#").b-nav__link Услуги
+                            li.b-nav__item: a(href="#").b-nav__link Частые вопросы
+                            li.b-nav__item: a(href="#").b-nav__link Оплата и доставка
+                            li.b-nav__item: a(href="#").b-nav__link Контакты
+                    nav.b-header__nav.b-nav.b-nav--secondary
+                        ul.b-nav__list
+                            li.b-nav__item: a(href="#").b-nav__link Путешествия
+                            li.b-nav__item: a(href="#").b-nav__link Распродажа
+                            li.b-nav__item: a(href="#").b-nav__link Страны
+                            li.b-nav__item: a(href="#").b-nav__link Мои путешествия
+                .b-header__interactive
+                    .b-header__item
+                        .b-header__call(data-da=".b-header__menu,767,1").b-call
+                            a(href="tel:+78107187391" title="Звонок").b-call__icon-wrap
+                                +svg('b-call__icon', 'phone')
+                            .b-call__content
+                                a(href="tel:+78107187391").b-call__phone +7 810 718 73 91
+                                a(href="#").b-call__text Заказать звонок
+                    .b-header__item
+                        a(href="#").b-header__button.b-button Найти путешествия
+                        a(href='#').b-header__icon-wrap
+                            +svg('b-header__icon', 'globe')
+                        .b-header__mobile-toggle.b-mobile-toggle(rel="js-mobile-toggle")
+                            .b-mobile-toggle__item: span
+    .b-header__menu(rel="js-mobile-menu")
